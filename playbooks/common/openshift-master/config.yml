@@ -11,13 +11,13 @@
 
 - include: certificates.yml
 
-- name: Disable excluders
-  hosts: oo_masters_to_config
-  gather_facts: no
-  roles:
-  - role: openshift_excluder
-    r_openshift_excluder_action: disable
-    r_openshift_excluder_service_type: "{{ openshift.common.service_type }}"
+#- name: Disable excluders
+#  hosts: oo_masters_to_config
+#  gather_facts: no
+#  roles:
+#  - role: openshift_excluder
+#    r_openshift_excluder_action: disable
+#    r_openshift_excluder_service_type: "{{ openshift.common.service_type }}"
 
 - name: Gather and set facts for master hosts
   hosts: oo_masters_to_config
@@ -223,13 +223,13 @@
   tasks:
   - include: tasks/wire_aggregator.yml
 
-- name: Re-enable excluder if it was previously enabled
-  hosts: oo_masters_to_config
-  gather_facts: no
-  roles:
-  - role: openshift_excluder
-    r_openshift_excluder_action: enable
-    r_openshift_excluder_service_type: "{{ openshift.common.service_type }}"
+#- name: Re-enable excluder if it was previously enabled
+#  hosts: oo_masters_to_config
+#  gather_facts: no
+#  roles:
+#  - role: openshift_excluder
+#    r_openshift_excluder_action: enable
+#    r_openshift_excluder_service_type: "{{ openshift.common.service_type }}"
 
 - name: Master Install Checkpoint End
   hosts: oo_all_hosts

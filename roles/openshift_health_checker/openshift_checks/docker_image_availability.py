@@ -165,8 +165,8 @@ class DockerImageAvailability(DockerHostMixin, OpenShiftCheck):
                 components.add(image_info["name"])
             for component in components:
                 required.add("{}/{}:{}".format(image_info["namespace"], component, image_tag))
-            if 'oo_etcd_to_config' in host_groups:  # special case, note it is the same for origin/enterprise
-                required.add("registry.access.redhat.com/rhel7/etcd")  # and no image tag
+            #if 'oo_etcd_to_config' in host_groups:  # special case, note it is the same for origin/enterprise
+            #    required.add("registry.access.redhat.com/rhel7/etcd")  # and no image tag
 
         return required
 

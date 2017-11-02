@@ -21,7 +21,7 @@
 
 - include: manage_node.yml
 
-- include: enable_excluders.yml
+#- include: enable_excluders.yml
 
 - name: Node Install Checkpoint End
   hosts: oo_all_hosts

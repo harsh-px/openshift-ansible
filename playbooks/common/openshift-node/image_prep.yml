@@ -17,8 +17,8 @@
 - name: run node config
   include: configure_nodes.yml
 
-- name: Re-enable excluders
-  include: enable_excluders.yml
+#- name: Re-enable excluders
+#  include: enable_excluders.yml
 
 - name: Remove any undesired artifacts from build
   include: clean_image.yml
